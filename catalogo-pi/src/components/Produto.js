@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Produto(props) {
     return (
-      <div className="col-3">
+      <div className="col-lg-3 ">
         
       
-        <div className="card" style={{width:"18rem"}}>
+        <div className="card " style={{width:"18rem"}}>
   <Image alt="Foto" src={"/assets/bike-01"}width={286} height={200} /> 
   <div className="card-body">
     <h5 className="card-title">{props.nome}</h5>

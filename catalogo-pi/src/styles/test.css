@@ -1,3 +1,16 @@
-.list-group list-group-flush{
-    width: 50px;
+.borda {
+    border:solid 1px silver;
+    border-radius: 6px;
+    border-color: greenyellow;   
+    background-color: greenyellow; 
 }
+
+.bg-custom {
+    background-color: black;; 
+  }
+
+  .bike-fundo {
+    background-image: url('/assets/bike-fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

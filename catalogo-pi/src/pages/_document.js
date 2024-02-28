@@ -17,7 +17,7 @@ export default function Document() {
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body>
+      <body className="bike-fundo">
         <Main />
         <NextScript />
       </body>
