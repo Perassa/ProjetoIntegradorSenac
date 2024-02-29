@@ -66,6 +66,8 @@ export default function Home() {
         <div className="row">
           {listaProduto.map((dado, index) => (
             <Produto
+            precoPromocional={dado.precoPromocional}
+            imagem={dado.imagem}
               key={index}
               nome={dado.nome}
               descricao={dado.descricao}

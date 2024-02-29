@@ -5,8 +5,8 @@ export default function Produto(props) {
       <div className="col-lg-3 ">
         
       
-        <div className="card " style={{width:"18rem"}}>
-  <Image alt="Foto" src={"/assets/bike-01"}width={286} height={200} /> 
+        <div className="card h-100 " style={{width:"18rem"}}>
+  <img alt="Foto" src={props.imagem}width={286} height={200} /> 
   <div className="card-body">
     <h5 className="card-title">{props.nome}</h5>
     <p className="card-text">{props.descricao}
@@ -18,16 +18,22 @@ export default function Produto(props) {
       ? <span className="badge text-bg-secondary">Indisponível</span>
       :null
     }
-    {
-      props.novidade == true
-      ? <span className=""></span>
-      :null
-    }
+    
     <span className="badge text-bg-secondary">Indisponível</span>
     <span className="badge text-bg-success">Novidade</span>
   </div>
   <div className="card-body">
-    <h3> R$ 7.999,99</h3>
+  {
+      props.novidade == true
+      ?  <Image alt="Foto" src={"/assets/Promocao.gif"}width={100} height={70}  />
+      :null
+    }
+     {
+      props.precoPromocional > 0
+      ? <h3> <s>R$ {props.precoPromocional}</s></h3>
+      :null
+    }
+    <h3> R$ {props.preco}</h3>
 
     <p>Parcelas de 12x no cartão sem juros </p>
     <div>
