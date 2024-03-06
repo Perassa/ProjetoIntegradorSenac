@@ -3,6 +3,7 @@ import Cabecalho from "@/components/Cabecalho";
 import axios from "axios";
 
 import { useEffect, useState } from "react";
+import Rodape from "@/components/Rodape";
 
 export default function Home() {
   const [listaProduto, setListaProduto] = useState([]);
@@ -32,6 +33,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+      <Rodape />
     </>
   );
 }

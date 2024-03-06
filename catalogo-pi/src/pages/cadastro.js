@@ -4,6 +4,7 @@ import CustomTextAreaLabel from "@/components/CustomTextAreaLabel";
 import Cabecalho from "@/components/Cabecalho";
 import axios from "axios";
 import { useState } from "react";
+import Rodape from "@/components/Rodape";
 
 export default function cadastro(){
 
@@ -59,6 +60,7 @@ function handleChange(e){
                 </div>
             </div>
         </div>
+        <Rodape></Rodape>
         
         </>
         

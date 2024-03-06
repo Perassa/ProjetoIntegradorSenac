@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Cabecalho(){
    return(<nav className="navbar navbar-expand-lg bg-custom "> 
@@ -25,15 +26,15 @@ export default function Cabecalho(){
      <div className="collapse navbar-collapse" id="navbarSupportedContent">
        <ul className="navbar-nav me-auto mb-2 mb-lg-0 borda">
          <li className="nav-item">
-           <a className="nav-link active" aria-current="page" href="#">
+           <Link className="nav-link active" aria-current="page" href="/">
              Home
-           </a>
+           </Link>
          </li>
          <li className="nav-item">
-           <a className="nav-link" href="#">
+           <Link className="nav-link" href="/cadastro">
 
              Cadastro
-           </a>
+           </Link>
          </li>
        </ul>
        <form className="d-flex" role="search">
