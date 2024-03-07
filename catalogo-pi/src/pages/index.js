@@ -7,19 +7,34 @@ import Rodape from "@/components/Rodape";
 
 export default function Home() {
   const [listaProduto, setListaProduto] = useState([]);
+  const [listaProdutoFiltrado, setListaProdutoFiltrado] = useState([]) 
 
   useEffect(() => {
     axios
       .get("https://localhost:7282/api/Produto")
-      .then((resp) => setListaProduto(resp.data));
+      .then((resp) => {
+        setListaProduto(resp.data)
+        setListaProdutoFiltrado(resp.data)
+        //console.log(resp,listaProduto)
+      });
+
   }, []);
+
+  function handlePesquisar(filtro){
+    const valorFiltro = filtro.target.value
+ console.log(listaProduto)
+    const filtrado = listaProduto.filter((dados) => dados.name.tolowerCase().includes(valorFiltro.tolowerCase()))
+    
+    setListaProdutoFiltrado(filtrado)
+    console.log(filtro)
+  }
 
   return (
     <>
-      <Cabecalho/>
+      <Cabecalho pesquisar={handlePesquisar}/>
       <div className="container-fluid mt-3">
         <div className="row">
-          {listaProduto.map((dado, index) => (
+          {listaProdutoFiltrado.map((dado, index) => (
             <Produto
             precoPromocional={dado.precoPromocional}
             imagem={dado.imagem}
