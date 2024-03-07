@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Produto(props) {
   return (
-    <div className="col-lg-3 ">
+    <div className="col-lg-3 mb-3 ">
       <div className="card h-100 " style={{ width: "18rem" }}>
         <img alt="Foto" src={props.imagem} width={286} height={200} />
         <div className="card-body">
