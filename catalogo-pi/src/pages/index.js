@@ -23,7 +23,7 @@ export default function Home() {
   function handlePesquisar(filtro){
     const valorFiltro = filtro.target.value
  console.log(listaProduto)
-    const filtrado = listaProduto.filter((dados) => dados.name.tolowerCase().includes(valorFiltro.tolowerCase()))
+    const filtrado = listaProduto.filter((dados) => dados.name.toLowerCase().includes(valorFiltro.toLowerCase()))
     
     setListaProdutoFiltrado(filtrado)
     console.log(filtro)
