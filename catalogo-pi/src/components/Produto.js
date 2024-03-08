@@ -18,7 +18,7 @@ export default function Produto(props) {
           <span className="badge text-bg-success">Novidade</span>
         </div>
         <div className="card-body">
-          {props.novidade == true ? (
+          {props.precoPromocional > 0 ? (
             <Image
               alt="Foto"
               src={"/assets/Promocao.gif"}
@@ -27,12 +27,13 @@ export default function Produto(props) {
             />
           ) : null}
           {props.precoPromocional > 0 ? (
+            <>
             <h3>
-              {" "}
-              <s>R$ {props.precoPromocional}</s>
+              <s>{Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(props.preco)}</s>
             </h3>
-          ) : null}
-          <h3> R$ {props.preco}</h3>
+            <h3>{Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(props.precoPromocional)}</h3></>
+          ) : <h3>{Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(props.preco)}</h3>}
+          
 
           <p>Parcelas de 12x no cartão sem juros </p>
           <div>

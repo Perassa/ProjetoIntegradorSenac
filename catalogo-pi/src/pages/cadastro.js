@@ -18,12 +18,13 @@ export default function cadastro(){
                                                       disponivel: true
     })
     
-function handleSalvar()
-{
-    //Enviaremos o post para a API
-    axios.post("https://localhost:7282/api/Produto", dadosproduto)
-    .then(res => console.log(res))
-}
+    function handleSalvar()
+    {
+        //Enviaremos o post para a API
+        axios.post("https://localhost:7282/api/Produto", dadosProduto)
+            .then(res => console.log(res))
+    }
+   
  
 function handleChange(e){
    // console.log(e.target.value)
@@ -47,7 +48,7 @@ function handleChange(e){
         <Cabecalho/>
         <div className="container-fluid">
             <div className="row">
-               <CustomInputLabel id="nome" onChange={handleChange} texto="nome" col="8" />
+               <CustomInputLabel id="name" onChange={handleChange} texto="nome" col="8" />
                <CustomInputLabel id="preco"onChange={handleChange} texto="preço" col="4" />
                <CustomTextAreaLabel id="descricao"onChange={handleChange} texto="Descrição" col="12"/>
                <CustomInputLabel id="imagem"onChange={handleChange} texto="URL da Imagem" col="12"/>  
