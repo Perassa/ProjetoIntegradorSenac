@@ -10,12 +10,12 @@ export default function Produto(props) {
           <p className="card-text">{props.descricao}</p>
         </div>
         <div className="d-flex justify-content-between aling-items-center">
-          {props.Disponível == false ? (
+          {props.disponivel == false ? (
             <span className="badge text-bg-secondary">Indisponível</span>
           ) : null}
-
-          <span className="badge text-bg-secondary">Indisponível</span>
-          <span className="badge text-bg-success">Novidade</span>
+          {props.novidade == true ? (
+            <span className="badge text-bg-success">Novidade</span>
+          ) : null}
         </div>
         <div className="card-body">
           {props.precoPromocional > 0 ? (
@@ -28,12 +28,29 @@ export default function Produto(props) {
           ) : null}
           {props.precoPromocional > 0 ? (
             <>
+              <h3>
+                <s>
+                  {Intl.NumberFormat("pt-br", {
+                    style: "currency",
+                    currency: "BRL",
+                  }).format(props.preco)}
+                </s>
+              </h3>
+              <h3>
+                {Intl.NumberFormat("pt-br", {
+                  style: "currency",
+                  currency: "BRL",
+                }).format(props.precoPromocional)}
+              </h3>
+            </>
+          ) : (
             <h3>
-              <s>{Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(props.preco)}</s>
+              {Intl.NumberFormat("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              }).format(props.preco)}
             </h3>
-            <h3>{Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(props.precoPromocional)}</h3></>
-          ) : <h3>{Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(props.preco)}</h3>}
-          
+          )}
 
           <p>Parcelas de 12x no cartão sem juros </p>
           <div>
