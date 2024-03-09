@@ -5,9 +5,10 @@ import Cabecalho from "@/components/Cabecalho";
 import axios from "axios";
 import { useState } from "react";
 import Rodape from "@/components/Rodape";
+import { useRouter } from "next/router";
 
 export default function cadastro(){
-
+    const router = useRouter()
 
     const [dadosProduto, setDadosProduto] = useState({
                                                       id : 0,
@@ -22,7 +23,10 @@ export default function cadastro(){
     {
         //Enviaremos o post para a API
         axios.post("https://localhost:7282/api/Produto", dadosProduto)
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                router.push("/")}
+                )
     }
    
  
