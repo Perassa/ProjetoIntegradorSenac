@@ -6,7 +6,7 @@ export default function Produto(props) {
       <div className="card h-100 " style={{ width: "18rem" }}>
         <img alt="Foto" src={props.imagem} width={286} height={200} />
         <div className="card-body">
-          <h5 className="card-title">{props.nome}</h5>
+          <h5 className="card-title ">{props.name}</h5>
           <p className="card-text">{props.descricao}</p>
         </div>
         <div className="d-flex justify-content-between aling-items-center">
@@ -51,7 +51,8 @@ export default function Produto(props) {
               }).format(props.preco)}
             </h3>
           )}
-
+          
+          
           <p>Parcelas de 12x no cartão sem juros </p>
           <div>
             <Image
